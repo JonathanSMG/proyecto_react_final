@@ -207,6 +207,7 @@ export const Administrador = (props) => {
                           estudiantes: prevState.estudiantes
                         }));                        
                       }}
+                      
                     />
                   </td>
                   <td>
@@ -264,6 +265,7 @@ export const Administrador = (props) => {
                   <td>
                     <textarea
                       value={habitacion.carac}
+                      className="textareaa"
                       onChange={e => {
                         const updatedHabitaciones = [...habitaciones];
                         updatedHabitaciones[index].carac = e.target.value;
