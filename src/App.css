@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  background-image: url('../public/fondo-uleam.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contendores-principales {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(95, 95, 95, 0.5);
+  overflow-y: auto; /* Ajusta a "auto" para permitir desplazamiento solo si es necesario */
+}
+
+
+/* -----------------[diseño del barmenu]-------------------- */
+
+#barmenu-container-container {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  left: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.link-clica.hide {
+  display: none;
+}
+
+#barmenu-container {
+  position: relative;
+  right: -40px; /* Ajusta el valor según sea necesario */
+  top: 10px; /* Ajusta el valor según sea necesario */
+  z-index: 9999;
+}
+
+#barmenu-container.active .menu-options {
+  display: block;
+}
+
+#barmenu-container .menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#barmenu-container .line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#barmenu-container .line.active {
+  background-color: #fff;
+}
+
+#barmenu-container .menu-options {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#barmenu-container .link-clic {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+/* --------------------------------------------------- */
+
+/* contenedor de mostrador si o existen tablas en el localstorage */
+
+.no-disponible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.5);
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ajusta el valor del z-index según sea necesario */
+}
+
+/* contenedor principales */
+
+
+.gestion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.5);
+}
+
+.titulo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p, ul, ol {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+/* ----------------------[ Logo ]------------------------------- */
+
+.logo {
+  width: 120px; 
+  height: 120px; 
+  display: block; 
+  margin-top: 10px;
+  text-align: center; 
+}
+/* --------------------------------------------------- */
+
+
+
+.login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.5);
+}
+
+
+.separador {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+/* ----------------------[ control de ingresar datos y sus colores]------------------------------- */
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+  padding: 1rem;
+  border: 1px solid #eed2d2;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0px 0px 5px #abcef3;
+}
+
+/* Botones */
+button[type="submit"], .enviarbtn {
+  background-color: #29b6c9;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+button[type="eliminate"] {
+  background-color: #d43b3b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1px;
+}
+
+.link-clic {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(141, 141, 145);
+  /* Otros estilos adicionales si los necesitas */
+}
+
+/* Estilos del contenedor de habitaciones */
+.habitaciones-contenedor {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos del título del contenedor de habitaciones */
+.habitaciones-contenedor h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos del grid de habitaciones */
+.habitaciones-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+/* Estilos de cada habitación */
+.room {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.room h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.room p {
+  margin-bottom: 0.5rem;
+}
+
+.room ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.room li {
+  margin-bottom: 0.25rem;
+}
+
+.administrador {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+}
+
+.administrador-contenido {
+  padding: 60px;
+  border-radius: 10px;
+}
+
+.administrador-cerrar {
+  background-color: #ccc;
+  border: none;
+  padding: 2px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.reservas-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.reservas-contenedor h1 {
+  margin-bottom: 1rem;
+}
+#tipo-habitacion , #metodo-pago{
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.hidden {
+  display: none;
+}
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.5);
+}
+
+/* ------------------------------[  Tablas | Administrador.html ]----------------------------------------- */
+
+ /* contenedor de las tablas de administrador */
+
+/* Estilos del contenedor de la tabla */
+.contenedor-tabla {
+  display: flex; /* Establece el contenedor como un contenedor flexible */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  flex-direction: column; /* Establece la dirección de los elementos hijos a vertical */
+  justify-content: center; /* Centra los elementos hijos verticalmente */
+  align-items: center; /* Centra los elementos hijos horizontalmente */
+  border: 1px solid #ccc; /* Agrega un borde de 1px sólido con un color gris claro */
+  padding: 90px; /* Añade 90px de padding alrededor del contenedor */
+  border-radius: 20px; /* Agrega un radio de borde de 20px para redondear las esquinas del contenedor */
+  margin-bottom: 50px; /* Agrega un margen inferior de 50px para separar este contenedor del siguiente elemento */
+  margin-top: 20px; /* Agrega un margen superior de 20px para separar este contenedor del elemento anterior */
+  width: 100%; /* Establece el ancho del contenedor al 100% del ancho del elemento padre */
+  max-width: 900px; /* Establece el ancho máximo del contenedor a 900px */
+  background-color: rgba(255, 255, 255, 0.7); /* Establece un fondo semi-transparente blanco */
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.5); /* Añade una sombra alrededor del contenedor */
+}
+
+/* Estilos de la tabla de habitaciones y tabla de estudiantes */
+.tabla-habitaciones, .tabla-estudiantes {
+  border-collapse: collapse; /* Combina las celdas de la tabla en una sola línea */
+  margin-top: 20px; /* Agrega un margen superior de 20px para separar esta tabla del elemento anterior */
+  width: 100%; /* Establece el ancho de la tabla al 100% del ancho del elemento padre */
+  background-color: #fff; /* Establece el fondo de la tabla en blanco */
+  border-radius: 5px; /* Agrega un radio de borde de 5px para redondear las esquinas de la tabla */
+  margin-bottom: 10px; /* Agrega un margen inferior de 50px para separar esta tabla del siguiente elemento */
+  overflow: hidden; /* Oculta el contenido que sobresale de la tabla */
+}
+
+/* Estilos para las celdas y encabezados de la tabla de habitaciones y tabla de estudiantes */
+.tabla-habitaciones th, .tabla-estudiantes th,
+.tabla-habitaciones td, .tabla-estudiantes td {
+  padding: 16px; /* Añade 12px de padding alrededor del contenido de la celda */
+  text-align: center; /* Centra el contenido de la celda horizontalmente */
+}
+
+.tabla-habitaciones th, .tabla-estudiantes th {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.tabla-habitaciones tbody tr:nth-child(even), .tabla-estudiantes tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.botones-habitaciones {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 40%;
+}
+
+ /* ------------------------------[  Tablas ]----------------------------------------- */
