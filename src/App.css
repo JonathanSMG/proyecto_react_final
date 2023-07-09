@@ -298,6 +298,12 @@ button[type="eliminate"] {
 .room li {
   margin-bottom: 0.25rem;
 }
+.textareaa {
+  width: 100%;
+  height: 100px; /* Establece una altura fija para el textarea */
+  resize: none; /* Desactiva la capacidad de redimensionar */
+  overflow: auto; /* Agrega barras de desplazamiento si el contenido excede el tamaño */
+}
 
 .administrador {
   position: fixed;
